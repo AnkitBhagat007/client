@@ -28,7 +28,7 @@ export default function ResetPasswordForm({ token }) {
 	const onSubmit = async (data) => {
 		try {
 			const response = await fetch(
-				`http://localhost:8000/auth/password-reset/${token}`,
+				`https://client-jade-eight-74.vercel.app/auth/password-reset/${token}`,
 				{
 					method: 'PATCH',
 					headers: {

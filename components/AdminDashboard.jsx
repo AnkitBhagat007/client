@@ -24,7 +24,7 @@ export default function AdminDashboard() {
 		setLoading(true)
 		try {
 			const response = await axios.get(
-				`http://localhost:8000/api/notesheets/user/me?${params.toString()}`,
+				`https://client-jade-eight-74.vercel.app/api/notesheets/user/me?${params.toString()}`,
 				{
 					headers: {
 						authorization: `Bearer ${localStorage.getItem('jwt')}`,

@@ -20,7 +20,7 @@ export default function ApproveNotesheet() {
 		setLoading(true)
 		try {
 			const response = await fetch(
-				`http://localhost:8000/api/notesheet/${notesheetID}`,
+				`https://client-jade-eight-74.vercel.app/api/notesheet/${notesheetID}`,
 				{
 					method: 'GET',
 					headers: {
@@ -52,7 +52,7 @@ export default function ApproveNotesheet() {
 			const pendingApprovals = notesheet.status.pendingApprovals
 
 			await axios.post(
-				'http://localhost:8000/pdf/create-sign',
+				'https://client-jade-eight-74.vercel.app/pdf/create-sign',
 				{
 					filename: notesheet.pdf.split('/').pop(),
 					html: html(approvals, pendingApprovals),
@@ -66,7 +66,7 @@ export default function ApproveNotesheet() {
 			)
 
 			await axios.post(
-				'http://localhost:8000/pdf/merge-sign',
+				'https://client-jade-eight-74.vercel.app/pdf/merge-sign',
 				{
 					filename: notesheet.pdf.split('/').pop(),
 				},
@@ -89,7 +89,7 @@ export default function ApproveNotesheet() {
 	const approveNotesheet = async () => {
 		try {
 			const response = await axios.patch(
-				'http://localhost:8000/api/notesheet/approve',
+				'https://client-jade-eight-74.vercel.app/api/notesheet/approve',
 				{ notesheetID },
 				{
 					headers: {

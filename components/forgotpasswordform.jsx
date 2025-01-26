@@ -17,7 +17,7 @@ export default function ForgotPasswordForm() {
 	const onSubmit = async (data) => {
 		try {
 			const response = await fetch(
-				'http://localhost:8000/auth/get-password-reset-token',
+				'https://client-jade-eight-74.vercel.app/auth/get-password-reset-token',
 				{
 					method: 'POST',
 					headers: {

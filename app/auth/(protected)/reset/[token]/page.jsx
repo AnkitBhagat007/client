@@ -13,7 +13,7 @@ export default function ForgotPassword() {
 		const verifyToken = async () => {
 			try {
 				const response = await fetch(
-					`http://localhost:8000/auth/verify-password-reset-token`,
+					`https://client-jade-eight-74.vercel.app/auth/verify-password-reset-token`,
 					{
 						method: 'POST',
 						headers: {

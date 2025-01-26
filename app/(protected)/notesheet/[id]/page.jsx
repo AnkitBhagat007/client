@@ -27,7 +27,7 @@ export default function NoteSheet() {
 	const getNotesheet = async () => {
 		try {
 			const response = await fetch(
-				`http://localhost:8000/api/notesheet/${notesheetID}`,
+				`https://client-jade-eight-74.vercel.app/api/notesheet/${notesheetID}`,
 				{
 					method: 'GET',
 					headers: {
@@ -55,7 +55,7 @@ export default function NoteSheet() {
 		if (user.admin === 'adean') {
 			try {
 				const response = await axios.patch(
-					'http://localhost:8000/api/notesheet/approve',
+					'https://client-jade-eight-74.vercel.app/api/notesheet/approve',
 					{ notesheetID },
 					{
 						headers: {
@@ -79,7 +79,7 @@ export default function NoteSheet() {
 		try {
 			rejectButtonRef.current.style.opacity = '0.5'
 			const response = await axios.delete(
-				`http://localhost:8000/api/notesheet/reject`,
+				`https://client-jade-eight-74.vercel.app/api/notesheet/reject`,
 				{
 					headers: {
 						'Content-Type': 'application/json',

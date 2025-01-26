@@ -69,7 +69,7 @@ export default function NotesheetsTable({ notesheets }) {
 						</a>
 						<a
 							onClick={(e) => e.stopPropagation()}
-							href={`http://localhost:8000/api/download/notesheet/${notesheet?.pdf.split('/').pop()}`}
+							href={`https://client-jade-eight-74.vercel.app/api/download/notesheet/${notesheet?.pdf.split('/').pop()}`}
 							target='_blank'
 							download
 						>

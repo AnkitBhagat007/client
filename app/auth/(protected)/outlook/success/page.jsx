@@ -16,7 +16,7 @@ const AuthSuccess = () => {
 			const login = async () => {
 				try {
 					const res = await fetch(
-						'http://localhost:8000/api/user/me',
+						'https://client-jade-eight-74.vercel.app/api/user/me',
 						{
 							headers: {
 								Authorization: `Bearer ${token}`,

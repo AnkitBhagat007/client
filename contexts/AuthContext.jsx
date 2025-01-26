@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 			try {
 				if (token) {
 					const res = await fetch(
-						'http://localhost:8000/api/user/me',
+						'https://client-jade-eight-74.vercel.app/api/user/me',
 						{
 							headers: {
 								Authorization: `Bearer ${token}`,
@@ -48,11 +48,14 @@ export const AuthProvider = ({ children }) => {
 		localStorage.setItem('jwt', token)
 
 		try {
-			const res = await fetch('http://localhost:8000/api/user/me', {
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			})
+			const res = await fetch(
+				'https://client-jade-eight-74.vercel.app/api/user/me',
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			)
 
 			const data = await res.json()
 
