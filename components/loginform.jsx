@@ -15,7 +15,7 @@ export default function LoginForm() {
 
 	const { login } = useAuth()
 
-	const {openDialog} = useDialog()
+	const { openDialog } = useDialog()
 
 	const [showPassword, setShowPassword] = useState(false)
 	const togglePasswordVisibility = () => {
@@ -24,16 +24,19 @@ export default function LoginForm() {
 
 	const handleLogin = async (data) => {
 		try {
-			const res = await fetch('http://localhost:8000/auth/login', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					email: data.email,
-					password: data.password,
-				}),
-			})
+			const res = await fetch(
+				'https://server-steel-rho.vercel.app/auth/login',
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						email: data.email,
+						password: data.password,
+					}),
+				}
+			)
 
 			data = await res.json()
 
@@ -51,7 +54,8 @@ export default function LoginForm() {
 	}
 
 	const handleOutlookLogin = async () => {
-		window.location.href = 'http://localhost:8000/oauth/outlook'
+		window.location.href =
+			'https://server-steel-rho.vercel.app/oauth/outlook'
 	}
 
 	const onSubmit = (data) => {

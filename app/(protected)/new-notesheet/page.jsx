@@ -1,6 +1,6 @@
 'use client'
-import { useAuth } from '@/contexts/AuthContext'
-import { useDialog } from '@/contexts/DialogBoxContext'
+import { useAuth } from './../../../contexts/AuthContext'
+import { useDialog } from './../../../contexts/DialogBoxContext'
 import { useRouter } from 'next/navigation'
 import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -28,7 +28,7 @@ const NewNotesheetForm = () => {
 
 		try {
 			const response = await axios.post(
-				'http://localhost:8000/api/notesheet/create',
+				'https://server-steel-rho.vercel.app/api/notesheet/create',
 				formData,
 				{
 					headers: {

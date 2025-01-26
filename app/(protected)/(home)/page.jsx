@@ -1,8 +1,8 @@
 'use client'
 
-import AdminDashboard from '@/components/AdminDashboard'
-import UserDashboard from '@/components/UserDashboard'
-import { useAuth } from '@/contexts/AuthContext'
+import AdminDashboard from './../../../components/AdminDashboard'
+import UserDashboard from './../../../components/UserDashboard'
+import { useAuth } from './../../../contexts/AuthContext'
 import Link from 'next/link'
 const Dashboard = () => {
 	const { isAdmin, user } = useAuth()

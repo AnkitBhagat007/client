@@ -1,6 +1,6 @@
 'use client'
-import Loader from '@/components/Loader'
-import ResetPasswordForm from '@/components/Resetpasswordform'
+import Loader from './../../../../../components/Loader'
+import ResetPasswordForm from './../../../../../components/resetpasswordform'
 import { useParams, useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
@@ -13,7 +13,7 @@ export default function ForgotPassword() {
 		const verifyToken = async () => {
 			try {
 				const response = await fetch(
-					`http://localhost:8000/auth/verify-password-reset-token`,
+					`https://server-steel-rho.vercel.app/auth/verify-password-reset-token`,
 					{
 						method: 'POST',
 						headers: {

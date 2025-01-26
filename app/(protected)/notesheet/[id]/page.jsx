@@ -1,14 +1,14 @@
 'use client'
-import { DynamicLazyBlurImage, LazyBlurImage } from '@/components/LazyBlurImage'
-import { useAuth } from '@/contexts/AuthContext'
-import { useDialog } from '@/contexts/DialogBoxContext'
+import { DynamicLazyBlurImage, LazyBlurImage } from './../../../../components/LazyBlurImage'
+import { useAuth } from './../../../../contexts/AuthContext'
+import { useDialog } from './../../../../contexts/DialogBoxContext'
 import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
-import NotesheetDetailsSkeleton from '@/components/NotesheetDetailsSkeleton'
+import NotesheetDetailsSkeleton from './../../../../components/NotesheetDetailsSkeleton'
 import Image from 'next/image'
-import PdfSkeleton from '@/components/PdfSkeleton'
-import { formatAmount, formatDate } from '@/utils/utils.js'
+import PdfSkeleton from './../../../../components/PdfSkeleton'
+import { formatAmount, formatDate } from './../../../../utils/utils'
 
 export default function NoteSheet() {
 	const [notesheet, setNotesheet] = useState({})
@@ -24,7 +24,7 @@ export default function NoteSheet() {
 	const getNotesheet = async () => {
 		try {
 			const response = await fetch(
-				`http://localhost:8000/api/notesheet/${notesheetID}`,
+				`https://server-steel-rho.vercel.app/api/notesheet/${notesheetID}`,
 				{
 					method: 'GET',
 					headers: {
@@ -52,7 +52,7 @@ export default function NoteSheet() {
 		if (user.admin === 'adean') {
 			try {
 				const response = await axios.patch(
-					'http://localhost:8000/api/notesheet/approve',
+					'https://server-steel-rho.vercel.app/api/notesheet/approve',
 					{ notesheetID },
 					{
 						headers: {
@@ -76,7 +76,7 @@ export default function NoteSheet() {
 		try {
 			rejectButtonRef.current.style.opacity = '0.5'
 			const response = await axios.delete(
-				`http://localhost:8000/api/notesheet/reject`,
+				`https://server-steel-rho.vercel.app/api/notesheet/reject`,
 				{
 					headers: {
 						'Content-Type': 'application/json',

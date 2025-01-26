@@ -1,7 +1,7 @@
 'use client'
 
-import Loader from '@/components/Loader'
-import { useAuth } from '@/contexts/AuthContext'
+import Loader from './../../../../../components/Loader'
+import { useAuth } from './../../../../../contexts/AuthContext'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
@@ -16,7 +16,7 @@ const AuthSuccess = () => {
 			const login = async () => {
 				try {
 					const res = await fetch(
-						'http://localhost:8000/api/user/me',
+						'https://server-steel-rho.vercel.app/api/user/me',
 						{
 							headers: {
 								Authorization: `Bearer ${token}`,

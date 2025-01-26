@@ -16,7 +16,7 @@ export default function ResetPasswordForm({ token }) {
 	const [showConfirmPassword, setshowConfirmPassword] = useState(false)
 	const Router = useRouter()
 
-	const {openDialog} = useDialog()
+	const { openDialog } = useDialog()
 
 	const togglePasswordVisibility = () => {
 		setShowPassword(!showPassword)
@@ -28,7 +28,7 @@ export default function ResetPasswordForm({ token }) {
 	const onSubmit = async (data) => {
 		try {
 			const response = await fetch(
-				`http://localhost:8000/auth/password-reset/${token}`,
+				`https://server-steel-rho.vercel.app/auth/password-reset/${token}`,
 				{
 					method: 'PATCH',
 					headers: {
@@ -43,8 +43,7 @@ export default function ResetPasswordForm({ token }) {
 				localStorage.removeItem('token')
 
 				openDialog('Password reset successful. Please login again')
-				setTimeout(() =>
-					Router.push('/auth/login'), 1500)
+				setTimeout(() => Router.push('/auth/login'), 1500)
 			} else {
 				openDialog(result.message)
 			}
