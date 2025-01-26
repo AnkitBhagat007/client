@@ -1,5 +1,8 @@
 'use client'
-import { DynamicLazyBlurImage, LazyBlurImage } from './../../../../components/LazyBlurImage'
+import {
+	DynamicLazyBlurImage,
+	LazyBlurImage,
+} from './../../../../components/LazyBlurImage'
 import { useAuth } from './../../../../contexts/AuthContext'
 import { useDialog } from './../../../../contexts/DialogBoxContext'
 import { useParams, useRouter } from 'next/navigation'
@@ -24,7 +27,7 @@ export default function NoteSheet() {
 	const getNotesheet = async () => {
 		try {
 			const response = await fetch(
-				`https://server-steel-rho.vercel.app/api/notesheet/${notesheetID}`,
+				`http://localhost:8000/api/notesheet/${notesheetID}`,
 				{
 					method: 'GET',
 					headers: {
@@ -52,7 +55,7 @@ export default function NoteSheet() {
 		if (user.admin === 'adean') {
 			try {
 				const response = await axios.patch(
-					'https://server-steel-rho.vercel.app/api/notesheet/approve',
+					'http://localhost:8000/api/notesheet/approve',
 					{ notesheetID },
 					{
 						headers: {
@@ -76,7 +79,7 @@ export default function NoteSheet() {
 		try {
 			rejectButtonRef.current.style.opacity = '0.5'
 			const response = await axios.delete(
-				`https://server-steel-rho.vercel.app/api/notesheet/reject`,
+				`http://localhost:8000/api/notesheet/reject`,
 				{
 					headers: {
 						'Content-Type': 'application/json',

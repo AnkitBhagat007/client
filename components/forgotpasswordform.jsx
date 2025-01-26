@@ -12,12 +12,12 @@ export default function ForgotPasswordForm() {
 	} = useForm()
 	const { openDialog } = useDialog()
 	const onError = (errorList) => {
-			openDialog(errorList.email.message)
-		}
+		openDialog(errorList.email.message)
+	}
 	const onSubmit = async (data) => {
 		try {
 			const response = await fetch(
-				'https://server-steel-rho.vercel.app/auth/get-password-reset-token',
+				'http://localhost:8000/auth/get-password-reset-token',
 				{
 					method: 'POST',
 					headers: {
@@ -36,8 +36,6 @@ export default function ForgotPasswordForm() {
 			reset()
 		}
 	}
-
-	
 
 	return (
 		<>

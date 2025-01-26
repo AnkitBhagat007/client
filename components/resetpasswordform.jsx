@@ -28,7 +28,7 @@ export default function ResetPasswordForm({ token }) {
 	const onSubmit = async (data) => {
 		try {
 			const response = await fetch(
-				`https://server-steel-rho.vercel.app/auth/password-reset/${token}`,
+				`http://localhost:8000/auth/password-reset/${token}`,
 				{
 					method: 'PATCH',
 					headers: {

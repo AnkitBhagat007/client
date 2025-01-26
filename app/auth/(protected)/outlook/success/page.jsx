@@ -16,7 +16,7 @@ const AuthSuccess = () => {
 			const login = async () => {
 				try {
 					const res = await fetch(
-						'https://server-steel-rho.vercel.app/api/user/me',
+						'http://localhost:8000/api/user/me',
 						{
 							headers: {
 								Authorization: `Bearer ${token}`,

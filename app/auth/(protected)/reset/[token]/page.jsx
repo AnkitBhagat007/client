@@ -13,7 +13,7 @@ export default function ForgotPassword() {
 		const verifyToken = async () => {
 			try {
 				const response = await fetch(
-					`https://server-steel-rho.vercel.app/auth/verify-password-reset-token`,
+					`http://localhost:8000/auth/verify-password-reset-token`,
 					{
 						method: 'POST',
 						headers: {

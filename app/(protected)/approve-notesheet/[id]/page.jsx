@@ -20,7 +20,7 @@ export default function ApproveNotesheet() {
 		setLoading(true)
 		try {
 			const response = await fetch(
-				`https://server-steel-rho.vercel.app/api/notesheet/${notesheetID}`,
+				`http://localhost:8000/api/notesheet/${notesheetID}`,
 				{
 					method: 'GET',
 					headers: {
@@ -52,7 +52,7 @@ export default function ApproveNotesheet() {
 			const pendingApprovals = notesheet.status.pendingApprovals
 
 			await axios.post(
-				'https://server-steel-rho.vercel.app/pdf/create-sign',
+				'http://localhost:8000/pdf/create-sign',
 				{
 					filename: notesheet.pdf.split('/').pop(),
 					html: html(approvals, pendingApprovals),
@@ -66,7 +66,7 @@ export default function ApproveNotesheet() {
 			)
 
 			await axios.post(
-				'https://server-steel-rho.vercel.app/pdf/merge-sign',
+				'http://localhost:8000/pdf/merge-sign',
 				{
 					filename: notesheet.pdf.split('/').pop(),
 				},
@@ -89,7 +89,7 @@ export default function ApproveNotesheet() {
 	const approveNotesheet = async () => {
 		try {
 			const response = await axios.patch(
-				'https://server-steel-rho.vercel.app/api/notesheet/approve',
+				'http://localhost:8000/api/notesheet/approve',
 				{ notesheetID },
 				{
 					headers: {
@@ -100,13 +100,7 @@ export default function ApproveNotesheet() {
 			)
 
 			openDialog(response.data.message)
-			setTimeout(
-				() =>
-					router.push(
-						`/notesheet/${notesheetID}`
-					),
-				250
-			)
+			setTimeout(() => router.push(`/notesheet/${notesheetID}`), 250)
 		} catch (error) {
 			openDialog(error.response?.data.message || error.message)
 		}

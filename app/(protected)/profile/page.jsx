@@ -1,5 +1,8 @@
 'use client'
-import { DynamicLazyBlurImage, LazyBlurImage } from './../../../components/LazyBlurImage'
+import {
+	DynamicLazyBlurImage,
+	LazyBlurImage,
+} from './../../../components/LazyBlurImage'
 import { useAuth } from './../../../contexts/AuthContext'
 import { useDialog } from './../../../contexts/DialogBoxContext'
 import { useState } from 'react'
@@ -40,7 +43,7 @@ const Profile = () => {
 
 		try {
 			const response = await axios.patch(
-				'https://server-steel-rho.vercel.app/auth/update-profile',
+				'http://localhost:8000/auth/update-profile',
 				{
 					name: data.name,
 				},
@@ -85,7 +88,7 @@ const Profile = () => {
 
 		try {
 			const response = await axios.patch(
-				'https://server-steel-rho.vercel.app/auth/change-password',
+				'http://localhost:8000/auth/change-password',
 				{
 					oldPassword: data.oldPassword,
 					password: data.newPassword,
