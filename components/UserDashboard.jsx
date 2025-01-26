@@ -25,7 +25,7 @@ export default function UserDashboard() {
 		setLoading(true)
 		try {
 			const response = await axios.get(
-				`https://client-jade-eight-74.vercel.app/api/notesheets/user/me?${params.toString()}`,
+				`https://server-steel-rho.vercel.app/api/notesheets/user/me?${params.toString()}`,
 				{
 					headers: {
 						authorization: `Bearer ${localStorage.getItem('jwt')}`,

@@ -56,7 +56,7 @@ const DynamicLazyBlurImage = ({
 		const fetchBlurData = async () => {
 			try {
 				const response = await fetch(
-					'https://client-jade-eight-74.vercel.app/api/get-dynamic-blur-image',
+					'https://server-steel-rho.vercel.app/api/get-dynamic-blur-image',
 					{
 						method: 'POST',
 						body: JSON.stringify({ url: src }),

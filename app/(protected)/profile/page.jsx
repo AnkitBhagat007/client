@@ -43,7 +43,7 @@ const Profile = () => {
 
 		try {
 			const response = await axios.patch(
-				'https://client-jade-eight-74.vercel.app/auth/update-profile',
+				'https://server-steel-rho.vercel.app/auth/update-profile',
 				{
 					name: data.name,
 				},
@@ -88,7 +88,7 @@ const Profile = () => {
 
 		try {
 			const response = await axios.patch(
-				'https://client-jade-eight-74.vercel.app/auth/change-password',
+				'https://server-steel-rho.vercel.app/auth/change-password',
 				{
 					oldPassword: data.oldPassword,
 					password: data.newPassword,

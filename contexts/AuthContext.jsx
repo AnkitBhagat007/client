@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 			try {
 				if (token) {
 					const res = await fetch(
-						'https://client-jade-eight-74.vercel.app/api/user/me',
+						'https://server-steel-rho.vercel.app/api/user/me',
 						{
 							headers: {
 								Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
 
 		try {
 			const res = await fetch(
-				'https://client-jade-eight-74.vercel.app/api/user/me',
+				'https://server-steel-rho.vercel.app/api/user/me',
 				{
 					headers: {
 						Authorization: `Bearer ${token}`,

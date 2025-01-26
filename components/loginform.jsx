@@ -25,7 +25,7 @@ export default function LoginForm() {
 	const handleLogin = async (data) => {
 		try {
 			const res = await fetch(
-				'https://client-jade-eight-74.vercel.app/auth/login',
+				'https://server-steel-rho.vercel.app/auth/login',
 				{
 					method: 'POST',
 					headers: {
@@ -55,7 +55,7 @@ export default function LoginForm() {
 
 	const handleOutlookLogin = async () => {
 		window.location.href =
-			'https://client-jade-eight-74.vercel.app/oauth/outlook'
+			'https://server-steel-rho.vercel.app/oauth/outlook'
 	}
 
 	const onSubmit = (data) => {
